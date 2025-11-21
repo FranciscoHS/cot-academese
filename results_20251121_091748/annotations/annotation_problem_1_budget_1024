@@ -1,0 +1,20 @@
+================================================================================
+Problem 1 - Budget 1024 tokens - 2025-11-21
+Type: integral
+================================================================================
+
+ANSWER: Partially Correct
+
+Why? 
+The model correctly identifies that it needs to use Laplace's method, and that 
+the integral cannot be solved analytically. The final answer is roughly of the 
+correct form, but the coefficients are slightly off.
+
+THINKING SUMMARY (total tokens: 709):
+All of the reasoning looks fairly concrete, with math symbols appearing 
+throughout. No flowery language observed.
+
+OBSERVATIONS:
+The model stopped before the allowed budget was fully expended (709 tokens used vs 1024 budget) even though it did not arrive at the correct response and its train-of-though qualitatively appears to have been interrupted:
+
+"The function seems to be increasing near zero, suggesting the maximum might exist in the positive region within the interval $[-0.8, 0.6]$. I'll investigate potential critical points where the derivative changes sign." - It ends here.

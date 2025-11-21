@@ -1,0 +1,32 @@
+================================================================================
+Problem 1 - Budget 3000 tokens - 2025-11-21
+Type: integral
+================================================================================
+
+ANSWER: Correct
+
+Why? 
+The model correctly identifies that it needs to use Laplace's method, and that 
+the integral cannot be solved analytically. The final answer is correct to at least two decimal places on all coefficients.
+
+THINKING SUMMARY (total tokens: 1145):
+There seems to be a bit of a phase change at what I'd estimate to be a third of the way through the CoT (which would put it at roughly 380 tokens). To illustrate what I mean, see before:
+
+"This is a transcendental equation. Let me check some values to get an idea:
+
+At $t = 0$: $f'(0) = 0 + 2.3 = 2.3 > 0$
+At $t = 0.6$: $f'(0.6) = -2.4(0.6)^3 + 2.3\cos(0.6) = -2.4(0.216) + 2.3(0.825) \approx -0.518 + 1.898 \approx 1.38 > 0$
+
+
+At $t = -0.8$: $f'(-0.8) = -2.4(-0.8)^3 + 2.3\cos(-0.8) = -2.4(-0.512) + 2.3\cos(0.8) = 1.229 + 2.3(0.697) \approx 1.229 + 1.603 \approx 2.83 > 0$"
+
+And after:
+
+"I'll investigate the behavior near zero more carefully, noting that for small $t$, $\cos(t)$ can be approximated by $1 - \frac{t^2}{2}$.
+
+Analyzing the derivative, I see $f'(t)$ changes from $2.3 - 1.15t^2 - 2.4t^3$ being positive near zero to potentially negative as the cubic term becomes dominant with increasing $t$. I'll evaluate the endpoints and seek a numerical approximation of the maximum."
+
+There's less math, more words. The reasoning still seems to make sense and it appears that computation is happening, but it's a lot wordier and less mathy.
+
+OBSERVATIONS:
+I'd say there was a bit of a phase change in what the reasoning looks like, but I would not describe it as full-on academese - there's still quantitative aspects to the reasoning, and despite it being wordier, progress appears to take place. The model does get the correct answer, an improvement with respect to the smaller thinking budget.
