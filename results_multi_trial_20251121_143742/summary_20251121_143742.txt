@@ -1,0 +1,90 @@
+======================================================================
+MULTI-TRIAL TEST - 10 TRIALS PER BUDGET
+Timestamp: 2025-11-21 14:37:42
+======================================================================
+
+PROBLEM AND CORRECT ANSWER:
+----------------------------------------------------------------------
+Problem ID: 2024-Mock-AIME-Problem-07
+Question: Compute the number of $9$-tuples $(a_0, a_1, \dots, a_8)$ of integers such that $a_i \in \{-1, 0, 1\}$ for $i = 0, 1, \dots, 8$ and the polynomial $ a_8x^8 + a_7x^7 + \dots + a_1x + a_0 $ is divisible by $x^2 + x + 1$.
+Correct Answer: 831
+
+======================================================================
+FILE ORGANIZATION:
+----------------------------------------------------------------------
+Individual trial CoT saved to: trial_[budget]_[trial_num].txt
+This file contains: summary statistics only
+
+======================================================================
+BUDGET: max_tokens=2000, budget_tokens=1900
+======================================================================
+
+Trial 1: ✗ Extracted=None, Tokens=2000, Stop=max_tokens
+Trial 2: ✗ Extracted=343, Tokens=1409, Stop=end_turn
+Trial 3: ✓ Extracted=831, Tokens=1419, Stop=end_turn
+Trial 4: ✗ Extracted=343, Tokens=1489, Stop=end_turn
+Trial 5: ✗ Extracted=None, Tokens=2000, Stop=max_tokens
+Trial 6: ✗ Extracted=343, Tokens=1715, Stop=end_turn
+Trial 7: ✗ Extracted=None, Tokens=2000, Stop=max_tokens
+Trial 8: ✓ Extracted=831, Tokens=1852, Stop=end_turn
+Trial 9: ✗ Extracted=343, Tokens=1574, Stop=end_turn
+Trial 10: ✗ Extracted=343, Tokens=873, Stop=end_turn
+
+======================================================================
+BUDGET: max_tokens=4000, budget_tokens=3900
+======================================================================
+
+Trial 1: ✗ Extracted=343, Tokens=1218, Stop=end_turn
+Trial 2: ✗ Extracted=343, Tokens=1546, Stop=end_turn
+Trial 3: ✗ Extracted=343, Tokens=1838, Stop=end_turn
+Trial 4: ✗ Extracted=343, Tokens=2032, Stop=end_turn
+Trial 5: ✗ Extracted=343, Tokens=1370, Stop=end_turn
+Trial 6: ✗ Extracted=343, Tokens=1570, Stop=end_turn
+Trial 7: ✗ Extracted=343, Tokens=1828, Stop=end_turn
+Trial 8: ✗ Extracted=343, Tokens=2979, Stop=end_turn
+Trial 9: ✗ Extracted=729, Tokens=2561, Stop=end_turn
+Trial 10: ✗ Extracted=343, Tokens=2188, Stop=end_turn
+
+======================================================================
+BUDGET: max_tokens=8000, budget_tokens=7900
+======================================================================
+
+Trial 1: ✗ Extracted=343, Tokens=2632, Stop=end_turn
+Trial 2: ✗ Extracted=343, Tokens=2769, Stop=end_turn
+Trial 3: ✗ Extracted=343, Tokens=2210, Stop=end_turn
+Trial 4: ✓ Extracted=831, Tokens=3137, Stop=end_turn
+Trial 5: ✓ Extracted=831, Tokens=4831, Stop=end_turn
+Trial 6: ✗ Extracted=343, Tokens=2564, Stop=end_turn
+Trial 7: ✓ Extracted=831, Tokens=2630, Stop=end_turn
+Trial 8: ✓ Extracted=831, Tokens=2691, Stop=end_turn
+Trial 9: ✓ Extracted=831, Tokens=2779, Stop=end_turn
+Trial 10: ✗ Extracted=343, Tokens=3436, Stop=end_turn
+
+======================================================================
+SUMMARY STATISTICS
+======================================================================
+
+Budget: max_tokens=2000, budget_tokens=1900
+  Success rate: 2/10 = 20.0%
+  Avg output tokens: 1633.1
+  Token range: [873, 2000]
+  Individual results: ['✗', '✗', '✓', '✗', '✗', '✗', '✗', '✓', '✗', '✗']
+  Files saved to: budget_2000/trial_2000_[1-10].txt
+
+Budget: max_tokens=4000, budget_tokens=3900
+  Success rate: 0/10 = 0.0%
+  Avg output tokens: 1913.0
+  Token range: [1218, 2979]
+  Individual results: ['✗', '✗', '✗', '✗', '✗', '✗', '✗', '✗', '✗', '✗']
+  Files saved to: budget_4000/trial_4000_[1-10].txt
+
+Budget: max_tokens=8000, budget_tokens=7900
+  Success rate: 5/10 = 50.0%
+  Avg output tokens: 2967.9
+  Token range: [2210, 4831]
+  Individual results: ['✗', '✗', '✗', '✓', '✓', '✗', '✓', '✓', '✓', '✗']
+  Files saved to: budget_8000/trial_8000_[1-10].txt
+
+======================================================================
+END OF SUMMARY
+======================================================================

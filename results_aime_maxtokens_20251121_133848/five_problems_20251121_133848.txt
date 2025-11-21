@@ -1,0 +1,89 @@
+======================================================================
+AGGREGATE AIME TEST - 5 PROBLEMS
+Timestamp: 2025-11-21 13:38:48
+Strategy: max_tokens only (no budget_tokens)
+======================================================================
+
+PROBLEMS AND CORRECT ANSWERS:
+----------------------------------------------------------------------
+
+Problem 1 [ID: 2024-Mock-AIME-Problem-07]:
+Question: Compute the number of $9$-tuples $(a_0, a_1, \dots, a_8)$ of integers such that $a_i \in \{-1, 0, 1\}$ for $i = 0, 1, \dots, 8$ and the polynomial $ a_8x^8 + a_7x^7 + \dots + a_1x + a_0 $ is divisible by $x^2 + x + 1$.
+Correct Answer: 831
+
+Problem 2 [ID: 2025-II-Mock-AIME-Problem-02]:
+Question: Let $P$ denote the product of all positive integers $n$ such that the least common multiple of $2n$ and $n^2$ is $62n-336$. Compute the remainder when $P$ is divided by $1000$.
+Correct Answer: 352
+
+Problem 3 [ID: 2024-Mock-AIME-Problem-10]:
+Question: Compute the number of integers $b \in \{1,2,\dots,1000\}$ for which there exists positive integers $a$ and $c$ satisfying $ \gcd(a,b) + \lcm(b,c) = \lcm(c,a)^3. $
+Correct Answer: 026
+
+Problem 4 [ID: 2025-II-Mock-AIME-Problem-13]:
+Question: Compute the largest positive integer $m$ such that $2^m$ divides $ \sum_{k=0}^{717}(-1)^k\binom{717}{k}(6+239k)^{717}. $
+Correct Answer: 711
+
+Problem 5 [ID: 2024-Mock-AIME-Problem-03]:
+Question: Perry the Panda is eating some bamboo over a five-day period from Monday to Friday (inclusive). On Monday, he eats $14$ pieces of bamboo. Each following day, Perry eats either one less than three times the previous day or one more than the previous day, with equal probability. Compute the expected number of pieces of bamboo Perry has eaten throughout the week after the end of Friday.
+Correct Answer: 434
+
+======================================================================
+COMBINED PROMPT:
+----------------------------------------------------------------------
+CRITICAL: Your response MUST contain ONLY a numbered list of answers. NO explanations, NO working, NO text before or after the answers.
+
+Solve the following AIME problems. Each answer is an integer from 0 to 999.
+
+PROBLEM 1:
+Compute the number of $9$-tuples $(a_0, a_1, \dots, a_8)$ of integers such that $a_i \in \{-1, 0, 1\}$ for $i = 0, 1, \dots, 8$ and the polynomial $ a_8x^8 + a_7x^7 + \dots + a_1x + a_0 $ is divisible by $x^2 + x + 1$.
+
+PROBLEM 2:
+Let $P$ denote the product of all positive integers $n$ such that the least common multiple of $2n$ and $n^2$ is $62n-336$. Compute the remainder when $P$ is divided by $1000$.
+
+PROBLEM 3:
+Compute the number of integers $b \in \{1,2,\dots,1000\}$ for which there exists positive integers $a$ and $c$ satisfying $ \gcd(a,b) + \lcm(b,c) = \lcm(c,a)^3. $
+
+PROBLEM 4:
+Compute the largest positive integer $m$ such that $2^m$ divides $ \sum_{k=0}^{717}(-1)^k\binom{717}{k}(6+239k)^{717}. $
+
+PROBLEM 5:
+Perry the Panda is eating some bamboo over a five-day period from Monday to Friday (inclusive). On Monday, he eats $14$ pieces of bamboo. Each following day, Perry eats either one less than three times the previous day or one more than the previous day, with equal probability. Compute the expected number of pieces of bamboo Perry has eaten throughout the week after the end of Friday.
+
+
+===== RESPONSE FORMAT =====
+Your response MUST be EXACTLY in this format with NOTHING else:
+
+1: [integer]
+2: [integer]
+3: [integer]
+4: [integer]
+5: [integer]
+
+FORBIDDEN:
+- Do NOT write "Looking at each problem"
+- Do NOT write "PROBLEM 1:", "PROBLEM 2:", etc.
+- Do NOT explain your reasoning
+- Do NOT add any other text
+- Do NOT use markdown formatting
+
+ONLY the 5 numbered lines. Nothing more.
+
+All your working and reasoning should go in your thinking/chain-of-thought, NOT in the final response.
+
+
+
+ERROR with max_tokens 2000: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'thinking.enabled.budget_tokens: Field required'}, 'request_id': 'req_011CVM3kkNtBhXoAFKLBSLyL'}
+
+
+======================================================================
+
+======================================================================
+SUMMARY
+======================================================================
+
+Max Tokens   Score        Output Tokens   Stop Reason    
+----------------------------------------------------------------------
+
+======================================================================
+END OF TEST
+======================================================================
