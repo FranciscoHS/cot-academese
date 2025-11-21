@@ -1,78 +1,57 @@
 import anthropic
-import json
 from datetime import datetime
 import os
 
 # Configuration
-input_file = 'selected_two_problems.json'
-thinking_budgets = [2000, 5000]
+thinking_budgets = [1024, 2048]
 
-# Load selected problems
-print("Loading selected problems...")
-with open(input_file, 'r') as f:
-    problems = json.load(f)
+# Problem definition
+question = """In a 3 × 3 grid, each cell is empty or contains a penguin. Two penguins
+are angry at each other if they occupy diagonally adjacent cells. Compute the number
+of ways to fill the grid so that none of the penguins are angry."""
 
-if len(problems) != 2:
-    print(f"ERROR: Expected 2 problems, found {len(problems)}")
-    exit(1)
+correct_answer = 119
 
-print(f"Loaded {len(problems)} problems")
+# Create prompt using Epoch's format
+prompt = f"""Please solve this AIME problem step by step. The answer is an integer ranging from 000 to 999, inclusive.
+{question}
+Remember to show your work clearly and end with 'ANSWER: X' where X is your final numerical answer."""
+
+print(f"\n{'='*70}")
+print(f"TESTING AIME PROBLEM - Penguin Grid")
+print(f"Correct answer: {correct_answer}")
+print(f"{'='*70}")
 
 # Initialize Anthropic client
 client = anthropic.Anthropic()
 
 # Generate timestamp for output files
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-output_dir = f"results_two_problems_{timestamp}"
+output_dir = f"results_aime_{timestamp}"
 
 # Create output directory
 os.makedirs(output_dir, exist_ok=True)
 
-# Create combined prompt
-combined_prompt = f"""Please solve both of the following problems:
-
-PROBLEM 1:
-{problems[0]['question']}
-
-PROBLEM 2:
-{problems[1]['question']}
-
-Provide complete solutions for both problems."""
-
-print(f"\n{'='*70}")
-print(f"TESTING TWO-PROBLEM SETUP")
-print(f"Problem 1 ID: {problems[0].get('problem_id', 'unknown')}, Type: {problems[0].get('question_type', 'unknown')}")
-print(f"Problem 2 ID: {problems[1].get('problem_id', 'unknown')}, Type: {problems[1].get('question_type', 'unknown')}")
-print(f"{'='*70}")
-
 # Create output file
-filename = f"{output_dir}/two_problems_{timestamp}.txt"
+filename = f"{output_dir}/penguin_grid_{timestamp}.txt"
 
 with open(filename, 'w', encoding='utf-8') as f:
     f.write("="*70 + "\n")
-    f.write("TWO-PROBLEM COMBINED TEST\n")
+    f.write("AIME PROBLEM: PENGUIN GRID\n")
     f.write(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
     f.write("="*70 + "\n\n")
     
-    f.write("PROBLEM 1:\n")
+    f.write("PROBLEM:\n")
     f.write("-"*70 + "\n")
-    f.write(f"ID: {problems[0].get('problem_id', 'unknown')}\n")
-    f.write(f"Type: {problems[0].get('question_type', 'unknown')}\n")
-    f.write(f"Question: {problems[0]['question']}\n\n")
-    f.write(f"Reference Solution: {problems[0]['solution']}\n\n")
-    f.write(f"Expected Answer: {problems[0].get('answer_val', 'N/A')}\n\n")
+    f.write(question + "\n\n")
     
-    f.write("PROBLEM 2:\n")
+    f.write("CORRECT ANSWER:\n")
     f.write("-"*70 + "\n")
-    f.write(f"ID: {problems[1].get('problem_id', 'unknown')}\n")
-    f.write(f"Type: {problems[1].get('question_type', 'unknown')}\n")
-    f.write(f"Question: {problems[1]['question']}\n\n")
-    f.write(f"Reference Solution: {problems[1]['solution']}\n\n")
-    f.write(f"Expected Answer: {problems[1].get('answer_val', 'N/A')}\n\n")
+    f.write(f"{correct_answer}\n\n")
     
-    f.write("COMBINED PROMPT:\n")
+    f.write("PROMPT:\n")
     f.write("-"*70 + "\n")
-    f.write(combined_prompt + "\n\n")
+    f.write(prompt + "\n\n")
     
     # Test each thinking budget
     for budget in thinking_budgets:
@@ -86,7 +65,7 @@ with open(filename, 'w', encoding='utf-8') as f:
                     "type": "enabled",
                     "budget_tokens": budget
                 },
-                messages=[{"role": "user", "content": combined_prompt}]
+                messages=[{"role": "user", "content": prompt}]
             )
             
             f.write("="*70 + "\n")
